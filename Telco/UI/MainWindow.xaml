@@ -1,0 +1,26 @@
+﻿<Window x:Class="Telco.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Telco.UI"
+        mc:Ignorable="d"
+        Title="Phone Company App" Height="450" Width="800">
+    <Grid>
+        <DataGrid ItemsSource="{Binding Abonents}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ФИО абонента" Binding="{Binding FullName}" Width="130"/>
+                <DataGridTextColumn Header="Улица" Binding="{Binding Address.Street}" Width="100"/>
+                <DataGridTextColumn Header="Номер дома" Binding="{Binding Address.HouseNumber}" Width="130"/>
+                <DataGridTextColumn Header="Домашний номер" Binding="{Binding HomePhoneNumber}" Width="150"/>
+                <DataGridTextColumn Header="Рабочий номер" Binding="{Binding WorkPhoneNumber}" Width="150"/>
+                <DataGridTextColumn Header="Мобильный номер" Binding="{Binding MobilePhoneNumber}" Width="150"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="400">
+            <Button Content="Поиск" Command="{Binding SearchCommand}" Height="380" Width="100" Margin="10"/>
+            <Button Content="Выгрузить CSV" Command="{Binding ExportCsvCommand}" Height="380" Width="100" Margin="10"/>
+            <Button Content="Улицы" Command="{Binding ShowStreetsCommand}" Height="380" Width="100" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>

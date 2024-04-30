@@ -1,0 +1,20 @@
+﻿<Window x:Class="Telco.UI.SearchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Telco.UI"
+        mc:Ignorable="d"
+        Title="Search" Height="300" Width="400">
+    <Grid>
+        <!-- Поле для ввода номера телефона -->
+        <TextBox Text="{Binding SearchNumber, UpdateSourceTrigger=PropertyChanged}" Margin="10"/>
+        
+        <!-- Кнопка для выполнения поиска -->
+        <Button Content="Поиск" Command="{Binding SearchCommand}" Margin="10"/>
+        
+        <!-- Результаты поиска -->
+        <DataGrid ItemsSource="{Binding SearchResult}" AutoGenerateColumns="True" Margin="10"/>
+    </Grid>
+
+</Window>
